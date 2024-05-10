@@ -198,12 +198,23 @@ public class LoginActivity extends AppCompatActivity {
                                         if (dataSnapshot.exists()) {
                                             // Lấy dữ liệu của người dùng từ Firebase
                                             String username = dataSnapshot.child("username").getValue(String.class);
+                                            String email=dataSnapshot.child("email").getValue(String.class);
+                                            String password=dataSnapshot.child("password").getValue(String.class);
+
 
                                             // Kiểm tra xem username có phải là "admin" hay không
                                             if ("admin".equals(username)) {
                                                 // Chuyển hướng đến trang admin
                                                 sendToMainActivityAdmin();
                                             } else {
+                                                FirebaseUser currentUser = mAuth.getCurrentUser();
+                                                String userID = currentUser.getUid();
+                                                String gender=dataSnapshot.child("gender").getValue(String.class);
+                                                String age=dataSnapshot.child("age").getValue(String.class);
+                                                String weight=dataSnapshot.child("weight").getValue(String.class);
+                                                String height=dataSnapshot.child("height").getValue(String.class);
+                                                UserSessionManager session = new UserSessionManager(getApplicationContext());
+                                                session.createUserLoginSession( userID, email,  password,  username,  age,  height,  weight ,gender);
                                                 // Chuyển hướng đến trang người dùng thông thường
                                                 sendToMainActivity();
                                             }

@@ -78,6 +78,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="yyyy/MM/dd"
@@ -112,7 +113,7 @@
             </TextView>
 
             <Spinner
-                android:id="@+id/planets_spinner"
+                android:id="@+id/Doctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -139,6 +140,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/note"
                     android:layout_width="match_parent"
                     android:layout_height="129dp"
                     android:hint="write your notice"
@@ -155,7 +157,7 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/confirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -166,7 +168,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/textView3"
+                android:id="@+id/makeApointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"

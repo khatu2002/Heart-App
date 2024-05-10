@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android.support.design="http://schemas.android.com/tools"
-    android:background="@drawable/background2">
+    android:background="@drawable/background_gradient">
 
     <Spinner
         android:id="@+id/ChooseLanguage"
@@ -49,7 +49,7 @@
             android:fontFamily="@font/poppinsbold"
             android:letterSpacing="0.05"
             android:text="@string/login"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#092C2C"
             android:textSize="28sp"
             android:layout_gravity="center_horizontal"/>
 
@@ -60,7 +60,7 @@
             android:fontFamily="@font/poppinsmedium"
             android:letterSpacing="0.02"
             android:text="@string/textintrologin"
-            android:textColor="@color/textDecs"
+            android:textColor="#092C2C"
             android:textSize="13sp" />
 
     </LinearLayout>
@@ -100,7 +100,7 @@
                 android:drawableStart="@drawable/ic_user_custom"
                 android:drawablePadding="8dp"
                 android:inputType="text"
-                android:textColor="@color/textInput" />
+                android:textColor="#092C2C" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_password_custom"
                 android:drawablePadding="8dp"
-                android:textColor="@color/textInput"
+                android:textColor="#092C2C"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -151,7 +151,7 @@
                 android:letterSpacing="0.04"
                 android:lineSpacingExtra="6sp"
                 android:text="@string/rememberMeCheckbox"
-                android:textColor="@color/black"
+                android:textColor="#092C2C"
                 android:textSize="14sp" />
 
             <Button
@@ -164,7 +164,7 @@
                 android:fontFamily="@font/poppinsregular"
                 android:paddingRight="0dp"
                 android:text="@string/forgotpass"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#339999"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -185,7 +185,7 @@
 
     <Button
         android:id="@+id/ButtonLogin"
-        android:layout_width="300dp"
+        android:layout_width="320dp"
         android:layout_height="65dp"
         android:layout_above="@+id/TextLoginWith"
         android:layout_centerHorizontal="true"
@@ -228,9 +228,9 @@
         android:paddingBottom="16dp"
         android:text="@string/ButtonGoogle"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="#092C2C"
         android:textSize="16sp"
-        app:backgroundTint="#4461F2"
+        app:backgroundTint="#339999"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="225dp"
@@ -250,7 +250,7 @@
             android:fontFamily="@font/poppinsmedium"
             android:lineSpacingExtra="6sp"
             android:text="@string/TextChooseSignup"
-            android:textColor="#6B7280"
+            android:textColor="#092C2C"
             android:textSize="14sp" />
 
         <TextView
@@ -261,7 +261,7 @@
             android:fontFamily="@font/poppinsregular"
             android:lineSpacingExtra="6sp"
             android:text="@string/ButtonSignup"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#339999"
             android:textSize="14sp" />
 
     </LinearLayout>

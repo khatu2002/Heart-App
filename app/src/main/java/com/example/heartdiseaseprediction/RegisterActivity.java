@@ -106,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 User userObj = new User(email, password.getText().toString().trim(),userName.getText().toString().trim());
                                 usersRef.child(user.getUid()).setValue(userObj);
-                                sendUserToLoginActivity();
+                                sendUserToSignupInformationActivity();
                                 Toast.makeText(RegisterActivity.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                             } else//Print the error message incase of failure
@@ -126,5 +126,10 @@ public class RegisterActivity extends AppCompatActivity {
         //This is to send user to Login Activity.
         Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(loginIntent);
+    }
+    private void sendUserToSignupInformationActivity()
+    {
+        Intent Intent = new Intent(RegisterActivity.this, SignUpInformationActivity.class);
+        startActivity(Intent);
     }
 }

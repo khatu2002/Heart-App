@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreen">
+    tools:context=".MainScreen"
+    android:background="@drawable/background_gradient">
     <TextView
         android:id="@+id/textView_AppName"
         android:layout_width="wrap_content"
@@ -30,7 +31,6 @@
         app:cpb_progressbar_color="#42A87B"
         app:cpb_progressbar_width="12dp"
         app:cpb_round_border="false"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_AppName" />
@@ -129,6 +129,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/bg_bottom" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
     <Button
         android:id="@+id/btn_ShowProfile"
         android:layout_width="wrap_content"
@@ -166,4 +176,5 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

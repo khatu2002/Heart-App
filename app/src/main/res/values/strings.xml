@@ -48,5 +48,7 @@
     <string name="TextLoginDesc">Explore real-time data on PM2.5, PM10, O3, NO2, CO, and more.</string>
     <string name="TextSignupDesc">"Ready to elevate your air quality experience? Sign up now! "</string>
     <string name="textresetdesc">- Must be at least 8 characters long.                            - Must contain at least one upper case.                            - Must contain at least one number or special character.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -1,6 +1,8 @@
 package com.example.heartdiseaseprediction;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,5 +24,8 @@ public class DetailApointmentActivity extends AppCompatActivity{
                 finish();
             }
         });
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String selectedService = sharedPreferences.getString("selectedService", "Heart check service");
+
     }
 }

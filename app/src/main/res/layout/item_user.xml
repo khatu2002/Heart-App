@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/heart_rate_value"
+            android:id="@+id/servicename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Heart beat: 85.84 bpm"
@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <ImageButton
+        android:id="@+id/show_more_chart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_menu_more" />

@@ -60,7 +60,6 @@ public class MainScreen extends AppCompatActivity {
     CircularProgressBar prog_Bar;
     Button btn_ShowProfile,btn_ShowChart,btn_ShowHistory;
     ImageButton LogOutButton;
-
     FirebaseAuth mAuth;
 
     long k = 1000;

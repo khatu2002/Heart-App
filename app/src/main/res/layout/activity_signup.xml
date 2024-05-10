@@ -4,12 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android.support.design="http://schemas.android.com/tools"
-    android:background="@drawable/background2">
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent" />
+    android:background="@drawable/background_gradient">
+
     <Button
         android:id="@+id/ButtonBack"
         android:layout_width="60dp"
@@ -54,7 +50,7 @@
             android:fontFamily="@font/poppinsbold"
             android:letterSpacing="0.05"
             android:text="@string/ButtonSignup"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#092C2C"
             android:textSize="28sp"
             android:layout_gravity="center_horizontal"/>
 
@@ -65,7 +61,7 @@
             android:fontFamily="@font/poppinsmedium"
             android:letterSpacing="0.02"
             android:text="@string/TextSignupDesc"
-            android:textColor="@color/textDecs"
+            android:textColor="#092C2C"
             android:textSize="13sp" />
 
     </LinearLayout>
@@ -105,7 +101,7 @@
                 android:cursorVisible="false"
                 android:drawableStart="@drawable/ic_user_custom"
                 android:drawablePadding="8dp"
-                android:textColor="@color/textInput"
+                android:textColor="#092C2C"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -133,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_email_custom"
                 android:drawablePadding="8dp"
-                android:textColor="@color/textInput"
+                android:textColor="#092C2C"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_password_custom"
                 android:drawablePadding="8dp"
-                android:textColor="@color/textInput"
+                android:textColor="#092C2C"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -191,7 +187,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_password_custom"
                 android:drawablePadding="8dp"
-                android:textColor="@color/textInput"
+                android:textColor="#092C2C"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -243,7 +239,7 @@
             android:lineHeight="22sp"
             android:lineSpacingExtra="6sp"
             android:text="@string/TextChooseSignup"
-            android:textColor="#6B7280"
+            android:textColor="#195E5E"
             android:textSize="14sp"/>
 
         <TextView
@@ -254,7 +250,7 @@
             android:fontFamily="@font/poppinsregular"
             android:lineSpacingExtra="6sp"
             android:text="@string/ButtonLogin"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#092C2C"
             android:textSize="14sp"/>
 
     </LinearLayout>
@@ -288,9 +284,9 @@
         android:paddingBottom="16dp"
         android:text="@string/ButtonGoogle"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="#092C2C"
         android:textSize="16sp"
-        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTint="#339999"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="130dp"
