@@ -39,7 +39,6 @@ public class ManageApointmentActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_apointment);
 
-        btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +75,7 @@ public class ManageApointmentActivity  extends AppCompatActivity {
 
 
         // Tạo truy vấn để lấy tất cả các cuộc hẹn có userID và status mong muốn
-        Query appointmentsQuery = appointmentsRef.orderByChild("userid_status").equalTo(userId + "_incoming");
+        Query appointmentsQuery = appointmentsRef.orderByChild("userid_status").equalTo(userId + "_finish");
 
         appointmentsQuery.addValueEventListener(new ValueEventListener() {
             @Override
@@ -109,7 +108,7 @@ public class ManageApointmentActivity  extends AppCompatActivity {
         linearLayout1.setOrientation(LinearLayout.VERTICAL);
         scrollView1.addView(linearLayout1);
         // Tạo truy vấn để lấy tất cả các cuộc hẹn có userID và status mong muốn
-        Query appointmentsQueryend = appointmentsRef.orderByChild("userid_status").equalTo(userId + "_finish");;
+        Query appointmentsQueryend = appointmentsRef.orderByChild("userid_status").equalTo(userId + "_incoming");;
         appointmentsQueryend.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

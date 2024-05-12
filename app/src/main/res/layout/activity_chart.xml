@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ChartActivity"
+    android:background="@drawable/background_gradient">
 
         <ImageView
             android:id="@+id/imgView_TopBg"
@@ -29,15 +30,7 @@
             app:strokeColor="#92EAE0"
             app:strokeWidth="2dp" />
 
-    <ImageButton
-        android:id="@+id/btn_ReturnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:src="@drawable/btn_home"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
 
     <TextView
         android:id="@+id/textView2"
@@ -47,6 +40,7 @@
         android:text="Heart Beat Virsualization"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="83dp"
         android:paddingLeft="10dp"

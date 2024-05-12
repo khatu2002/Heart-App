@@ -29,15 +29,6 @@
         app:strokeColor="#92EAE0"
         app:strokeWidth="2dp" />
 
-    <ImageButton
-        android:id="@+id/btn_ReturnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:src="@drawable/btn_home"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,7 +36,9 @@
         android:layout_height="30dp"
         android:fontFamily="@font/inter_black"
         android:text="Make an apointment"
+        android:gravity="center"
         android:textSize="20dp"
+        android:textColor="#092C2C"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="83dp"
@@ -82,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="yyyy/MM/dd"
+                android:textColor="#092C2C"
                 android:paddingLeft="20dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="17dp">
@@ -107,6 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Choose Doctor:"
+                android:textColor="#092C2C"
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="17dp">
 
@@ -118,6 +113,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppinsmedium"
+                android:textColor="#092C2C"
                 android:textSize="17dp"
                 />
         </LinearLayout>
@@ -130,6 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Note:"
+                android:textColor="#092C2C"
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="17dp">
 
@@ -144,7 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="129dp"
                     android:hint="write your notice"
-                    android:textStyle="italic" 
+                    android:textStyle="italic"
+                    android:textColor="#092C2C"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,7 +159,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Confirm the information" />
+                android:text="Confirm the information"
+                android:textColor="#092C2C"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

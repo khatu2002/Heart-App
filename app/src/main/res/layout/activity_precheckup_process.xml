@@ -30,22 +30,21 @@
         app:strokeWidth="2dp" />
 
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="386dp"
         android:layout_height="30dp"
+        android:gravity="center"
         android:fontFamily="@font/inter_black"
-        android:text="Sign Up"
+        android:text="Pre-checkup Process"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#092C2C"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="83dp"
         android:paddingLeft="10dp"
+        android:textColor="#092C2C"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgView_TopBg"
-        android:textAlignment="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/imgView_TopBg"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,111 +58,62 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="450dp"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_height="200dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
                 android:paddingLeft="50dp"
-                android:paddingTop="100dp"
-                android:paddingRight="50dp"
-                android:text="Please choose gender!!"
+                android:paddingTop="130dp"
+                android:paddingRight="0dp"
+                android:text="Patient's temperature:"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textColor="#092C2C"/>
 
-
-            <Spinner
-                android:id="@+id/gender"
+            <EditText
+                android:id="@+id/temperater"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#092C2C"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:paddingTop="10dp"
+                android:text="°C"
+                android:textSize="20dp"
+                android:textColor="#092C2C"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
                 android:textColor="#092C2C"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fill your age!!"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:fontFamily="@font/poppinsmedium"
+                android:paddingLeft="50dp"
                 android:paddingTop="30dp"
-                android:textColor="#092C2C"/>
+                android:paddingRight="0dp"
+                android:text="Patient's blood pressure:"
+                android:textAlignment="center"
+                android:textSize="20dp"/>
 
             <EditText
-                android:id="@+id/age"
-                android:layout_width="100dp"
+                android:id="@+id/bloodPressure"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberSigned"
-                android:layout_gravity="center"
-                android:textColor="#092C2C"/>
-
+                android:textSize="20dp"/>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppinsmedium"
-                android:paddingLeft="20dp"
-                android:paddingTop="30dp"
-                android:paddingRight="20dp"
-                android:text="Fill in the weight and height !!"
-                android:textAlignment="center"
+                android:text="mmHg"
                 android:textSize="20dp"
                 android:textColor="#092C2C"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
-            <EditText
-                android:id="@+id/weight"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:ems="10"
-                android:inputType="numberSigned" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kg"
-                    android:textSize="20dp"
-                    android:textColor="#092C2C"
-                    android:layout_gravity="bottom">
-
-                </TextView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
-                <EditText
-                    android:id="@+id/height"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:ems="10"
-                    android:inputType="numberSigned"
-                    android:textColor="#092C2C"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="m"
-                    android:textSize="20dp"
-                    android:textColor="#092C2C"
-                    android:layout_gravity="bottom">
-
-                </TextView>
-            </LinearLayout>
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -171,24 +121,24 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="260dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content">
 
             </TextView>
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="89dp"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="14dp"
                 android:layout_weight="1"
-                android:text="Finish"
+                android:text="Medical Examination"
                 android:textAlignment="center"
                 android:textSize="18dp"
                 android:textColor="#092C2C"
                 android:fontFamily="@font/poppinsmedium"/>
 
             <ImageView
-                android:id="@+id/finish"
+                android:id="@+id/MedicalExamination"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

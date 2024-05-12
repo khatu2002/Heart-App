@@ -39,7 +39,6 @@ public class ChooseServiceActivity extends AppCompatActivity {
                 finish();
             }
         });
-        btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
 //
 
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {

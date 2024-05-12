@@ -2,7 +2,9 @@ package com.example.heartdiseaseprediction;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -203,8 +205,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
                                             // Kiểm tra xem username có phải là "admin" hay không
-                                            if ("admin".equals(username)) {
+                                            if (username.startsWith("Doctor")) {
+                                                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("Doctor", username);
                                                 // Chuyển hướng đến trang admin
+                                                DoctorSessionManager session = new DoctorSessionManager(getApplicationContext());
+                                                session.createDoctorLoginSession(username,password);
                                                 sendToMainActivityAdmin();
                                             } else {
                                                 FirebaseUser currentUser = mAuth.getCurrentUser();

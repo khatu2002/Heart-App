@@ -14,6 +14,9 @@ public class User {
     // Constructor rỗng được yêu cầu bởi Firebase
     public User() {
     }
+    public User (String userID){
+        this.userID=userID;
+    }
 
     // Constructor với các tham số
     public User(String userID,String email, String password, String username, String age, String height, String weight,String gender) {

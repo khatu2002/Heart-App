@@ -8,9 +8,28 @@ public class Appointment {
     private String status;
     private String service;
     private String userid_status;
+    private String temperature;
+    private String blood_pressure;
+    private String medical_history;
+    private String diagnostic;
+    private String sypptom;
     public Appointment() {
     }
 
+    public Appointment(String date, String doctor, String note, String status, String service,String userid_status,String temperature, String blood_pressure,String medical_history, String diagnostic)
+    {
+        this.date = date;
+        this.doctor = doctor;
+        this.note = note;
+        this.status=status;
+        this.service = service;
+        this.userid_status=userid_status;
+        this.temperature=temperature;
+        this.blood_pressure=blood_pressure;
+        this.medical_history=medical_history;
+        this.diagnostic=diagnostic;
+
+    }
     public Appointment(String date, String doctor, String note, String status, String service, User user,String userid_status) {
         this.date = date;
         this.doctor = doctor;
@@ -20,8 +39,17 @@ public class Appointment {
         this.user=user;
         this.userid_status=userid_status;
     }
-
-
+    public Appointment( String temperature, String blood_pressure,String sypptom,String medical_history, String diagnostic ){
+        this.temperature=temperature;
+        this.blood_pressure=blood_pressure;
+        this.medical_history=medical_history;
+        this.diagnostic=diagnostic;
+        this.sypptom=sypptom;
+    }
+    Appointment(String date,String service){
+        this.date=date;
+        this.service=service;
+    }
     public String getDate() {
         return date;
     }
@@ -75,4 +103,43 @@ public class Appointment {
     public void setUserid_status(String userid_status) {
         this.userid_status = userid_status;
     }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(String temperature) {
+        this.temperature= temperature;
+    }
+    public String getBlood_pressure () {
+        return blood_pressure ;
+    }
+
+    public void setBlood_pressure (String blood_pressure ) {
+        this.blood_pressure  = blood_pressure ;
+    }
+    public String getMedical_history () {
+        return medical_history ;
+    }
+
+    public void setMedical_history (String medical_history ) {
+        this.medical_history  = medical_history ;
+    }
+    public String getDiagnostic () {
+        return diagnostic ;
+    }
+
+    public void setDiagnostic (String diagnostic ) {
+        this.diagnostic  = diagnostic ;
+    }
+
+    public String getSypptom () {
+        return sypptom ;
+    }
+
+    public void setSypptom (String sypptom ) {
+        this.sypptom  = sypptom ;
+    }
+
+
 }

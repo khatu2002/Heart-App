@@ -60,7 +60,6 @@ public class ScheduleActivity extends AppCompatActivity {
 
 
 
-        btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
