@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -70,54 +71,39 @@ public class MedicalExaminationActivity extends AppCompatActivity {
         prescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Sypptom=symptom.getText().toString();
-                String MedicalHistory=medicalhistory.getText().toString();
-                String Diagnostic=diagnostic.getText().toString();
+                if(CheckConstraint()==true) {
+                    String Sypptom = symptom.getText().toString();
+                    String MedicalHistory = medicalhistory.getText().toString();
+                    String Diagnostic = diagnostic.getText().toString();
 
-                Appointment a=new Appointment(temperater,blood_pressure,Sypptom,MedicalHistory,Diagnostic);
-                DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppoimentKey);
-                // Tạo một HashMap để lưu trữ các giá trị dữ liệu mới
-                Map<String, Object> updateValues = new HashMap<>();
-                updateValues.put("temperater", temperater);
-                updateValues.put("blood_pressure", blood_pressure);
-                updateValues.put("Sypptom", Sypptom);
-                updateValues.put("MedicalHistory", MedicalHistory);
-                updateValues.put("Diagnostic", Diagnostic);
+                    Appointment a = new Appointment(temperater, blood_pressure, Sypptom, MedicalHistory, Diagnostic);
+                    DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppoimentKey);
+                    // Tạo một HashMap để lưu trữ các giá trị dữ liệu mới
+                    Map<String, Object> updateValues = new HashMap<>();
+                    updateValues.put("temperater", temperater);
+                    updateValues.put("blood_pressure", blood_pressure);
+                    updateValues.put("Sypptom", Sypptom);
+                    updateValues.put("MedicalHistory", MedicalHistory);
+                    updateValues.put("Diagnostic", Diagnostic);
 
-                // Cập nhật dữ liệu cho nút có khóa là AppoimentKey trong bảng "appointments"
-                appointmentsRef.updateChildren(updateValues)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                // Xử lý khi cập nhật thành công
-                                Log.d("SuccessFUll", "Dữ liệu đã được cập nhật thành công");
-                                SendtoPrescriptionsActivity();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Xử lý khi cập nhật thất bại
-                                Log.e("SuccessFUll", "Lỗi khi cập nhật dữ liệu", e);
-                            }
-                        });
-
-                //                appointmentsRef.push(temperater,blood_pressure,Sypptom,MedicalHistory,Diagnostic)
-//                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                            @Override
-//                            public void onSuccess(Void aVoid) {
-//                                // Xử lý thành công
-//                                Toast.makeText(getApplicationContext(), "Appointment saved successfully", Toast.LENGTH_SHORT).show();
-//                                SendtoPrescriptionsActivity();
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                // Xử lý khi gặp lỗi
-//                                Toast.makeText(getApplicationContext(), "Failed to save appointment: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
+                    // Cập nhật dữ liệu cho nút có khóa là AppoimentKey trong bảng "appointments"
+                    appointmentsRef.updateChildren(updateValues)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    // Xử lý khi cập nhật thành công
+                                    Log.d("SuccessFUll", "Dữ liệu đã được cập nhật thành công");
+                                    SendtoPrescriptionsActivity();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    // Xử lý khi cập nhật thất bại
+                                    Log.e("SuccessFUll", "Lỗi khi cập nhật dữ liệu", e);
+                                }
+                            });
+                }
             }
         });
     }
@@ -125,6 +111,21 @@ public class MedicalExaminationActivity extends AppCompatActivity {
         Intent intent=new Intent(getApplicationContext(), PrescriptionsActivity.class);
         startActivity(intent);
         finish();
+
+    }
+    public boolean CheckConstraint(){
+        symptom=findViewById(R.id.symptom);
+        medicalhistory=findViewById(R.id.medicalHistory);
+        diagnostic=findViewById(R.id.diagnostic);
+        if(TextUtils.isEmpty(symptom.getText().toString())){
+            Toast.makeText(getApplicationContext(), "Please enter symptom", Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (TextUtils.isEmpty(medicalhistory.getText().toString())) {
+            Toast.makeText(getApplicationContext(), "Please enter medical history", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(diagnostic.getText().toString())) {
+            Toast.makeText(getApplicationContext(), "Please enter diagnostic", Toast.LENGTH_SHORT).show();
+        }
+        return true;
 
     }
 }
