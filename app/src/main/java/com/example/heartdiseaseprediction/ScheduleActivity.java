@@ -60,11 +60,10 @@ public class ScheduleActivity extends AppCompatActivity {
 
 
 
+        btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
             @Override
-
             public void onClick(View view) {
-
                 Intent intent = new Intent(getApplicationContext(), MainScreen.class);
                 startActivity(intent);
                 finish();
@@ -187,15 +186,6 @@ public class ScheduleActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public boolean CheckConstraint(){
-        Date=findViewById(R.id.date);
-        if(TextUtils.isEmpty(Date.getText().toString())){
-            Toast.makeText(getApplicationContext(), "Please enter symptom", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
 
     }
 //    private Boolean CheckAvalable(){

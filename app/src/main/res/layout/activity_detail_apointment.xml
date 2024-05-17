@@ -178,11 +178,160 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:hint="Diagnostic detail"
-                    android:textSize="15dp"
-                    android:editable="false"/>
+                    android:textSize="15dp"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medical examination history: "
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <androidx.cardview.widget.CardView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="3dp"
+                    app:cardMaxElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/nameservice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Check heart service"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Text VIew to display Course Rating -->
+                            <!-- Image used in present in drawable folder -->
+                            <TextView
+                                android:id="@+id/dateservice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/nameservice"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="12, March, 2024"
+                                />
+                            <TextView
+                                android:id="@+id/detailservice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/dateservice"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="detail"
+                                />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/nameservice1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Check heart service"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Text VIew to display Course Rating -->
+                            <!-- Image used in present in drawable folder -->
+                            <TextView
+                                android:id="@+id/dateservice1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/nameservice1"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="12, March, 2024"
+                                />
+                            <TextView
+                                android:id="@+id/detailservice1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/dateservice1"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="detail"
+                                />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/nameservice2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Check heart service"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- Text VIew to display Course Rating -->
+                            <!-- Image used in present in drawable folder -->
+                            <TextView
+                                android:id="@+id/dateservice2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/nameservice2"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="12, March, 2024"
+                                />
+                            <TextView
+                                android:id="@+id/detailservice2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/dateservice2"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:drawablePadding="2dp"
+                                android:text="detail"
+                                />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </ScrollView>
+
+        </LinearLayout>
 
     </LinearLayout>
     <ImageView

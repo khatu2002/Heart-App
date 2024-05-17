@@ -47,14 +47,10 @@ public class ChartActivity extends AppCompatActivity{
     ArrayList barEntriesArrayList;
     ImageButton btn_ReturnHome;
     private TimeUnit TimeUnit;
-    UserSessionManager session;
-    User user;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
-        session=new UserSessionManager(getApplicationContext());
-        user=session.getUserDetails();
         MakeApointment = findViewById(R.id.makeApointment);
         MakeApointment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +60,7 @@ public class ChartActivity extends AppCompatActivity{
                 finish();
             }
         });
+        btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
 //
 
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +108,7 @@ public class ChartActivity extends AppCompatActivity{
         DatabaseReference myRef = database.getReference("users");
 
 // Lấy dữ liệu từ node "cardiacInfo"
-        myRef.child(user.getUserID()).child("cardiacInfo").addValueEventListener(new ValueEventListener() {
+        myRef.child("llRsCx6vX5eK1Du0gQNWczgHFfk1").child("cardiacInfo").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Lấy dữ liệu từ DataSnapshot

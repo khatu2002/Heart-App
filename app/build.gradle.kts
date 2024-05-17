@@ -51,5 +51,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation ("com.google.android.material:material:1.2.1")
+    implementation ("com.google.android.material:material:1.2.0")
+
 
 }

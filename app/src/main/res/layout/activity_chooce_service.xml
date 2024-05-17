@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
-    android:background="@drawable/background_gradient">
+    tools:context=".ProfileActivity">
 
     <ImageView
         android:id="@+id/imgView_TopBg"
@@ -30,13 +29,20 @@
         app:strokeColor="#92EAE0"
         app:strokeWidth="2dp" />
 
-
+    <ImageButton
+        android:id="@+id/btn_ReturnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:background="@null"
+        android:src="@drawable/btn_home"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="386dp"
         android:layout_height="30dp"
-        android:gravity="center"
         android:fontFamily="@font/inter_black"
         android:text="Make an apointment"
         android:textSize="20dp"
@@ -71,8 +77,7 @@
                 android:paddingRight="50dp"
                 android:text="Please choose service you want!!"
                 android:textAlignment="center"
-                android:textColor="#092C2C"
-                android:textSize="25dp" />
+                android:textSize="25dp"></TextView>
 
             <Spinner
                 android:id="@+id/ChooseService"

@@ -39,7 +39,6 @@
         android:text="Sign Up"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#092C2C"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="83dp"
         android:paddingLeft="10dp"
@@ -60,8 +59,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="450dp"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -72,8 +70,7 @@
                 android:paddingRight="50dp"
                 android:text="Please choose gender!!"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:textColor="#092C2C"/>
+                android:textSize="20dp"></TextView>
 
 
             <Spinner
@@ -83,7 +80,6 @@
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:paddingTop="10dp"
-                android:textColor="#092C2C"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -93,8 +89,7 @@
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:fontFamily="@font/poppinsmedium"
-                android:paddingTop="30dp"
-                android:textColor="#092C2C"/>
+                android:paddingTop="30dp"></TextView>
 
             <EditText
                 android:id="@+id/age"
@@ -102,8 +97,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="numberSigned"
-                android:layout_gravity="center"
-                android:textColor="#092C2C"/>
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,8 +108,7 @@
                 android:paddingRight="20dp"
                 android:text="Fill in the weight and height !!"
                 android:textAlignment="center"
-                android:textSize="20dp"
-                android:textColor="#092C2C"/>
+                android:textSize="20dp"></TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -134,7 +127,6 @@
                     android:layout_height="wrap_content"
                     android:text="Kg"
                     android:textSize="20dp"
-                    android:textColor="#092C2C"
                     android:layout_gravity="bottom">
 
                 </TextView>
@@ -150,14 +142,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:ems="10"
-                    android:inputType="numberSigned"
-                    android:textColor="#092C2C"/>
+                    android:inputType="numberSigned" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="m"
                     android:textSize="20dp"
-                    android:textColor="#092C2C"
                     android:layout_gravity="bottom">
 
                 </TextView>
@@ -184,7 +174,6 @@
                 android:text="Finish"
                 android:textAlignment="center"
                 android:textSize="18dp"
-                android:textColor="#092C2C"
                 android:fontFamily="@font/poppinsmedium"/>
 
             <ImageView

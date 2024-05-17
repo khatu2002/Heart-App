@@ -204,7 +204,6 @@
         android:layout_marginBottom="17dp"
         android:layout_gravity="center"
         android:visibility="invisible" />
-
     <Button
         android:id="@+id/ButtonSignup"
         android:layout_width="300dp"
@@ -214,6 +213,7 @@
         android:layout_marginBottom="10dp"
         android:accessibilityLiveRegion="assertive"
         android:background="@drawable/btn_background_gradient"
+        app:backgroundTint="@null"
         android:fontFamily="@font/poppinsbold"
         android:paddingTop="16dp"
         android:paddingBottom="16dp"
@@ -221,7 +221,7 @@
         android:text="@string/ButtonSignup"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:backgroundTint="@null" />
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
