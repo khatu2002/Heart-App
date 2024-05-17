@@ -37,7 +37,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AdminMainScreen extends AppCompatActivity {
 
-    TextView username, heartRateTextView;
+    TextView username;
     ;
     ImageButton LogOutButton, showMoreChartButton;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
