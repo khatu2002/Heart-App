@@ -23,6 +23,7 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +43,6 @@ public class ChartActivity extends AppCompatActivity{
 
     // variable for our bar data set.
     BarDataSet barDataSet;
-    ImageView MakeApointment;
     // array list for storing entries.
     ArrayList barEntriesArrayList;
     ImageButton btn_ReturnHome;
@@ -51,6 +51,12 @@ public class ChartActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
+<<<<<<< HEAD
+        session=new UserSessionManager(getApplicationContext());
+        user=session.getUserDetails();
+
+
+=======
         MakeApointment = findViewById(R.id.makeApointment);
         MakeApointment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +67,7 @@ public class ChartActivity extends AppCompatActivity{
             }
         });
         btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
+>>>>>>> origin/main
 //
 
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {

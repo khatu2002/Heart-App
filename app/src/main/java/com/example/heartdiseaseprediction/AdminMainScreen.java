@@ -50,9 +50,17 @@ public class AdminMainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_sceen);
 
+<<<<<<< HEAD
+        DoctorSessionManager session = new DoctorSessionManager(getApplicationContext());
+        // Lấy thông tin Doctor từ session và lưu vào biến doctor
+        Doctor doctor = session.getDoctorDetails();
+        Log.d("doctor",doctor.getUsername());
+        UserSessionManager sessionUser=new UserSessionManager(getApplicationContext());
+=======
 
 
 
+>>>>>>> origin/main
         //username = findViewById(R.id.name);
         //heartRateTextView = findViewById(R.id.heart_rate_value);
         //getdata();
@@ -137,6 +145,24 @@ public class AdminMainScreen extends AppCompatActivity {
                     String service = appointmentSnapshot.child("service").getValue(String.class);
                     String date=appointmentSnapshot.child("date").getValue(String.class);
 
+<<<<<<< HEAD
+                    if (doctor.getUsername().equals(nameDoctor)) {
+                        String nameStr = appointmentSnapshot.child("user").child("username").getValue(String.class);
+                        String service = appointmentSnapshot.child("service").getValue(String.class);
+                        String date=appointmentSnapshot.child("date").getValue(String.class);
+                        String IDAppointment =appointmentSnapshot.getKey();
+                        SaveKeyAppointment(IDAppointment);
+                        // Tạo view mới từ layout XML
+                        LayoutInflater inflater = LayoutInflater.from(AdminMainScreen.this);
+                        View itemView = inflater.inflate(R.layout.item_user, null);
+                        // Đặt dữ liệu vào các TextView trong itemView
+                        TextView Name = itemView.findViewById(R.id.name);
+                        Name.setText(service);
+                        TextView UserName = itemView.findViewById(R.id.username);
+                        UserName.setText(nameStr);
+                        TextView AppointmentID = itemView.findViewById(R.id.IDAppointment);
+                        AppointmentID.setText(IDAppointment);
+=======
                     // Tạo view mới từ layout XML
                     LayoutInflater inflater = LayoutInflater.from(AdminMainScreen.this);
                     View itemView = inflater.inflate(R.layout.item_user, null);
@@ -153,11 +179,41 @@ public class AdminMainScreen extends AppCompatActivity {
                     // Đặt dữ liệu vào các TextView trong itemView
                     TextView Name = itemView.findViewById(R.id.name);
                     Name.setText(nameStr);
+>>>>>>> origin/main
 
                     TextView Service = itemView.findViewById(R.id.servicename);
                     Service.setText(service+"    "+date);
 
+<<<<<<< HEAD
+                        showMoreChartButton = itemView.findViewById(R.id.show_more_chart);
+                        // Lắng nghe sự kiện click cho nút showMoreChartButton
+                        showMoreChartButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                TextView Name = itemView.findViewById(R.id.username);
+                                String username = Name.getText().toString();
+                                SaveSessionUser(username);
+                                SendToChartActivity();
+                            }
+                        });
+                        LinearLayout linearLayout2=itemView.findViewById(R.id.appointmentInfo);
+                        linearLayout2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                TextView Name = itemView.findViewById(R.id.username);
+                                String username = Name.getText().toString();
+                                SaveSessionUser(username);
+                                SaveSessionAppointment(IDAppointment);
+                                SendToDetailActivity();
+                            }
+                        });
+
+
+                        linearLayout1.addView(itemView);
+                    }
+=======
                     linearLayout.addView(itemView);
+>>>>>>> origin/main
                 }
             }
 
@@ -219,4 +275,91 @@ public class AdminMainScreen extends AppCompatActivity {
 //            }
 //        });
 //    }
+<<<<<<< HEAD
+    private void SaveSessionUser(String usernameStr){
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users");
+        Query userQuery = userRef.orderByChild("username").equalTo(usernameStr);
+        Log.d("Username:",usernameStr);
+        userQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Kiểm tra xem có dữ liệu trả về không
+                if (dataSnapshot.exists()) {
+                    // Lấy dữ liệu từ dataSnapshot
+                    DataSnapshot userSnapshot = dataSnapshot.getChildren().iterator().next();
+                    String Uid =userSnapshot.getKey();
+                    String password =userSnapshot.child("password").getValue(String.class);
+                    String email = userSnapshot.child("email").getValue(String.class);
+                    String age = userSnapshot.child("age").getValue(String.class);
+                    String height = userSnapshot.child("height").getValue(String.class);
+                    String weight = userSnapshot.child("weight").getValue(String.class);
+                    String gender = userSnapshot.child("gender").getValue(String.class);
+                    // Lưu thông tin user vào UserSession
+                    UserSessionManager userSession = new UserSessionManager(getApplicationContext());
+                    userSession.createUserLoginSession(Uid, email, password, usernameStr, age, height, weight, gender);
+                    // Chuyển đến màn hình ChartActivity
+
+                } else {
+                    // Không tìm thấy user
+                    Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra
+                Toast.makeText(getApplicationContext(), "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void SaveSessionAppointment(String IDAppointment){
+        DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments");
+        Query appointmentsQuery = appointmentsRef.orderByKey().equalTo(IDAppointment);
+        appointmentsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Kiểm tra xem có dữ liệu trả về không
+                if (dataSnapshot.exists()) {
+                    // Lấy dữ liệu từ dataSnapshot
+                    DataSnapshot Snapshot = dataSnapshot.getChildren().iterator().next();
+                    String service =Snapshot.child("service").getValue(String.class);
+                    String date =Snapshot.child("date").getValue(String.class);
+                    AppointmentSessionManager Session = new AppointmentSessionManager(getApplicationContext());
+                    Session.createAppointmentSession(new Appointment(date,service));
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Appoiment not found", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra
+                Toast.makeText(getApplicationContext(), "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    public void SendToChartActivity(){
+        Intent intent=new Intent(getApplicationContext(),ChartActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void SendToPreCheckupActivity(){
+        Intent intent=new Intent(getApplicationContext(), PreCheckUpProcessActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void SendToDetailActivity(){
+        Intent intent=new Intent(getApplicationContext(), DetailApointmentActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void SaveKeyAppointment(String AppoimentID){
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("AppointmentKey", AppoimentID);
+        editor.apply();
+    }
+=======
+>>>>>>> origin/main
 }

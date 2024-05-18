@@ -53,12 +53,13 @@ public class ScheduleActivity extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
     String userId = currentUser.getUid();
-    ImageButton btn_ReturnHome;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
 
+<<<<<<< HEAD
+=======
 
         btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
         btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +70,7 @@ public class ScheduleActivity extends AppCompatActivity {
                 finish();
             }
         });
+>>>>>>> origin/main
         //lay biến service đã chọn
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String selectedService = sharedPreferences.getString("selectedService", "");
@@ -164,6 +166,7 @@ public class ScheduleActivity extends AppCompatActivity {
                 String appointmentId = databaseReference.child("users").child(auth.getCurrentUser().getUid()).child("appointments").push().getKey();
                     String userid_status =userId+"_incoming";
                     Appointment appointment= new Appointment(date, doctor,note,"incoming",selectedService,userA,userid_status);
+                    Log.d("selectedService",selectedService);
                     // Lưu vào Appointment trong users
                     databaseReference.child("appointments").child(appointmentId).setValue(appointment)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {

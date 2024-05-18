@@ -23,7 +23,7 @@
             android:layout_toEndOf="@id/img"
             android:text="Check heart service"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <!-- Text VIew to display Course Rating -->

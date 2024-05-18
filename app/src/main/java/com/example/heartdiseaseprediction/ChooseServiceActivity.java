@@ -42,14 +42,7 @@ public class ChooseServiceActivity extends AppCompatActivity {
         btn_ReturnHome = findViewById(R.id.btn_ReturnHome);
 //
 
-        btn_ReturnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainScreen.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
         Spinner spinner = findViewById(R.id.ChooseService);
         String[] services = {"Cardiology services", "Heart health programs", "Cardiovascular diagnostics",
                 "Interventional cardiology", "Electrophysiology services", "Cardiac rehabilitation",

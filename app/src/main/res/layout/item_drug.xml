@@ -40,6 +40,7 @@
         android:layout_toEndOf="@id/img"
         android:drawablePadding="2dp"
         android:hint="Routine"
+        android:textSize="15dp"
         android:background="@color/white"
         />
     <EditText
@@ -52,6 +53,7 @@
         android:layout_toEndOf="@id/img"
         android:drawablePadding="2dp"
         android:hint="Amount each routine"
+        android:textSize="15dp"
         android:background="@color/white"
         />
 </RelativeLayout>

@@ -76,6 +76,36 @@ public class MedicalExaminationActivity extends AppCompatActivity {
                     String MedicalHistory = medicalhistory.getText().toString();
                     String Diagnostic = diagnostic.getText().toString();
 
+<<<<<<< HEAD
+                DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppoimentKey);
+                // Tạo một HashMap để lưu trữ các giá trị dữ liệu mới
+                Map<String, Object> updateValues = new HashMap<>();
+                updateValues.put("temperater", temperater);
+                updateValues.put("blood_pressure", blood_pressure);
+                updateValues.put("Sypptom", Sypptom);
+                updateValues.put("MedicalHistory", MedicalHistory);
+                updateValues.put("Diagnostic", Diagnostic);
+                updateValues.put("status", "finish");
+                // Cập nhật dữ liệu cho nút có khóa là AppoimentKey trong bảng "appointments"
+                appointmentsRef.updateChildren(updateValues)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                // Xử lý khi cập nhật thành công
+                                Log.d("SuccessFUll", "Dữ liệu đã được cập nhật thành công");
+                                SendtoPrescriptionsActivity();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Xử lý khi cập nhật thất bại
+                                Log.e("SuccessFUll", "Lỗi khi cập nhật dữ liệu", e);
+                            }
+                        });
+
+
+=======
                     Appointment a = new Appointment(temperater, blood_pressure, Sypptom, MedicalHistory, Diagnostic);
                     DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppoimentKey);
                     // Tạo một HashMap để lưu trữ các giá trị dữ liệu mới
@@ -104,6 +134,7 @@ public class MedicalExaminationActivity extends AppCompatActivity {
                                 }
                             });
                 }
+>>>>>>> origin/main
             }
         });
     }

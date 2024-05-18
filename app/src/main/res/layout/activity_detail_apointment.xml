@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".DetailApointmentActivity"
+    android:background="@drawable/background_gradient">
 
     <ImageView
         android:id="@+id/imgView_TopBg"
@@ -29,24 +30,17 @@
         app:strokeColor="#92EAE0"
         app:strokeWidth="2dp" />
 
-    <ImageButton
-        android:id="@+id/btn_ReturnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:background="@null"
-        android:src="@drawable/btn_home"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="386dp"
         android:layout_height="30dp"
         android:fontFamily="@font/inter_black"
-        android:text="Details apointments"
+        android:text="Detail Appointment"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#092C2C"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="83dp"
         android:paddingLeft="10dp"
@@ -54,131 +48,209 @@
         app:layout_constraintTop_toBottomOf="@+id/imgView_TopBg"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="600dp"
         android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
         android:paddingLeft="18dp"
-        android:paddingRight="18dp">
+        android:paddingRight="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:srcCompat="@drawable/usercolor"
-            android:layout_gravity="center"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/usercolor" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/userInfo"
+            android:layout_width="367dp"
             android:layout_height="wrap_content"
-            android:text="User - Age - Gender"
             android:layout_gravity="center"
             android:fontFamily="@font/poppinsmedium"
-            android:textAlignment="center"></TextView>
+            android:paddingBottom="15dp"
+            android:text="User - Age - Gender"
+            android:textAlignment="center"
+            android:textColor="#092C2C"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
                 android:text="Weight: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:textColor="#092C2C"/>
+
             <TextView
+                android:id="@+id/weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0kg"
-                android:textSize="18dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="18dp"
+                android:textColor="#092C2C"/>
+
+            <LinearLayout
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Service: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="servicename"
-                android:textSize="18dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apointment Date: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="yyyy/MM/dd"
-                android:textSize="18dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="coming"
-                android:textSize="18dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Detail: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="detail"
-                android:textSize="18dp"/>
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:text="Height: "
+                    android:textSize="20sp"
+                    android:textColor="#092C2C"/>
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0kg"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="18dp"
+                    android:textColor="#092C2C"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Service: "
+                android:textSize="20dp"
+                android:textColor="#092C2C"/>
+
+            <TextView
+                android:id="@+id/service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="servicename"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="18dp"
+                android:textColor="#092C2C"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Apointment Date: "
+                android:textSize="20sp"
+                android:textColor="#092C2C"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yyyy/MM/dd"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="18dp"
+                android:textColor="#092C2C"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Symptom: "
+                android:textSize="20sp"
+                android:textColor="#092C2C"/>
+
+            <TextView
+                android:id="@+id/symptom"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="#092C2C"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:textColor="#092C2C">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Medical history: "
+                android:textSize="20sp"
+                android:textColor="#092C2C"/>
+
+            <TextView
+                android:id="@+id/medicalHistory"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="18dp"
+                android:textColor="#092C2C"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinssemibold"
                 android:text="Diagnostic: "
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                android:textColor="#092C2C"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/diagnostic"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:hint="Diagnostic detail"
+<<<<<<< HEAD
+                    android:textSize="15dp"
+                    android:textColor="#092C2C"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:editable="false"/>
+=======
                     android:textSize="15dp"/>
+>>>>>>> origin/main
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
         <LinearLayout
@@ -195,6 +267,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+<<<<<<< HEAD
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="230dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:text="Recept"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textColor="#092C2C"
+                android:fontFamily="@font/poppinsmedium"/>
+
+            <ImageView
+                android:id="@+id/Recept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/nexticon" />
+        </LinearLayout>
+
+=======
                 <androidx.cardview.widget.CardView
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -332,15 +436,9 @@
             </ScrollView>
 
         </LinearLayout>
+>>>>>>> origin/main
 
     </LinearLayout>
-    <ImageView
-        android:id="@+id/bg_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/bg_bottom" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

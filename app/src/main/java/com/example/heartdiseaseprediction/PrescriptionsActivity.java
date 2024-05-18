@@ -49,7 +49,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
         String AppoimentKey = sharedPreferences.getString("AppointmentKey", "");
         String DoctorName = sharedPreferences.getString("Doctor", "");
         List<String> medicineList = new ArrayList<>();
-        doctorname.findViewById(R.id.Doctorname);
+        doctorname=findViewById(R.id.Doctorname);
         doctorname.setText(DoctorName);
 
 
@@ -57,22 +57,22 @@ public class PrescriptionsActivity extends AppCompatActivity {
         addDrug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ScrollView scrollView = findViewById(R.id.scrollViewdrug);
-                LinearLayout linearLayout = new LinearLayout(getApplicationContext());
-                linearLayout.setOrientation(LinearLayout.VERTICAL);
-                scrollView.addView(linearLayout);
+                ScrollView scrollView = findViewById(R.id.scrollViewdrug); // Lấy tham chiếu đến ScrollView đã có sẵn trong layout của bạn
+                LinearLayout linearLayout =findViewById(R.id.layoutContent); // Lấy tham chiếu đến LinearLayout đã có sẵn trong ScrollView
 
                 LayoutInflater inflater = LayoutInflater.from(PrescriptionsActivity.this);
                 View itemView = inflater.inflate(R.layout.item_drug, null);
 
-                linearLayout.addView(itemView);
-                Drugname=itemView.findViewById(R.id.drugname);
+                linearLayout.addView(itemView); // Thêm itemView vào LinearLayout đã có sẵn trong ScrollView
+
+                Spinner Drugname = itemView.findViewById(R.id.drugname); // Lấy tham chiếu đến Spinner từ itemView
+
                 // Set Adapter cho Spinner
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("medicines");
-                databaseReference.addValueEventListener(new ValueEventListener() {
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        medicineList.clear();
+                        List<String> medicineList = new ArrayList<>();
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             String medicineName = snapshot.child("name").getValue(String.class);
                             medicineList.add(medicineName);
@@ -92,6 +92,7 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 });
             }
         });
+
         Finish=findViewById(R.id.finish);
         Finish.setOnClickListener(new View.OnClickListener() {
             @Override

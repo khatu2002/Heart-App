@@ -1,3 +1,5 @@
+import android.databinding.tool.writer.ViewBinding
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -33,6 +35,7 @@ android {
     }
     buildFeatures {
         mlModelBinding = true
+        viewBinding = true
     }
 }
 
@@ -40,6 +43,7 @@ dependencies {
     implementation("com.mikhaellopez:circularprogressbar:3.1.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
+    implementation ("com.google.android.material:material:1.2.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.android.volley:volley:1.2.1")
     implementation("org.tensorflow:tensorflow-lite-support:0.1.0")
@@ -51,7 +55,13 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation ("com.google.android.material:material:1.2.1")
+<<<<<<< HEAD
+    implementation ("androidx.navigation:navigation-fragment:2.4.1")
+
+    implementation ("androidx.navigation:navigation-ui:2.4.1")
+=======
     implementation ("com.google.android.material:material:1.2.0")
 
+>>>>>>> origin/main
 
 }
