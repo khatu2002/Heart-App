@@ -36,7 +36,7 @@ public class ChooseServiceActivity extends AppCompatActivity {
         Back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(getApplicationContext(), AppointmentFragment.class);
+                Intent intent =new Intent(getApplicationContext(), MainScreen.class);
                 startActivity(intent);
             }
         });

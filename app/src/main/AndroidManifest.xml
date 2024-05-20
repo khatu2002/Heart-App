@@ -13,6 +13,10 @@
         android:theme="@style/Theme.HeartDiseasePrediction"
 
         tools:targetApi="31">
+        <activity android:name=".Activities.Doctor.AdminReceptActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.Doctor.AdminDetailAppointmentActivity"
+            android:exported="false"/>
         <activity android:name=".Activities.User.ReceiptActivity"
                 android:exported="false"/>
         <activity android:name=".Activities.SignUpInformationActivity"

@@ -70,7 +70,14 @@ public class DetailApointmentActivity extends AppCompatActivity{
             }
         });
 
-
+        Back_btn=findViewById(R.id.ButtonBack);
+        Back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(), MainScreen.class);
+                startActivity(intent);
+            }
+        });
 
         String appoinmentID= sharedPreferences.getString("AppointmentKey", "");
         Log.d("AppointmentID",appoinmentID);

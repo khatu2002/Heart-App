@@ -346,7 +346,7 @@ public class AdminMainScreen extends AppCompatActivity {
         finish();
     }
     public void SendToDetailActivity(){
-        Intent intent=new Intent(getApplicationContext(), DetailApointmentActivity.class);
+        Intent intent=new Intent(getApplicationContext(), AdminDetailAppointmentActivity.class);
         startActivity(intent);
         finish();
     }
