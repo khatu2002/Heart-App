@@ -56,11 +56,12 @@
 
         <TextView
             android:id="@+id/TextSignupDesc"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
             android:letterSpacing="0.02"
-            android:text="@string/TextSignupDesc"
+            android:text="Guard Your Heart, Live Smart."
+            android:gravity="center"
             android:textColor="#092C2C"
             android:textSize="13sp" />
 

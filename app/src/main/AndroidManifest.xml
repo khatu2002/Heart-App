@@ -13,63 +13,60 @@
         android:theme="@style/Theme.HeartDiseasePrediction"
 
         tools:targetApi="31">
-
+        <activity android:name=".Activities.User.ReceiptActivity"
+                android:exported="false"/>
+        <activity android:name=".Activities.SignUpInformationActivity"
+            android:exported="false"/>
         <activity
-<<<<<<< HEAD
-            android:name=".ReceiptActivity"
+            android:name=".Activities.Doctor.PreCheckUpProcessActivity"
             android:exported="false" />
         <activity
-            android:name=".PreCheckUpProcessActivity"
+            android:name=".Activities.Doctor.PrescriptionsActivity"
             android:exported="false" />
         <activity
-            android:name=".PrescriptionsActivity"
+            android:name=".Activities.Doctor.MedicalExaminationActivity"
             android:exported="false" />
         <activity
-            android:name=".MedicalExaminationActivity"
-=======
-            android:name=".SignUpInformationActivity"
->>>>>>> origin/main
+            android:name=".Activities.Doctor.ChartActivity"
             android:exported="false" />
         <activity
-            android:name=".ChartActivity"
+            android:name=".Activities.User.ChooseServiceActivity"
             android:exported="false" />
         <activity
-            android:name=".ChooseServiceActivity"
+            android:name=".Activities.User.DetailApointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailApointmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ManageApointmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ScheduleActivity"
+            android:name=".Activities.User.ScheduleActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminMainScreen"
+            android:name=".Activities.Doctor.AdminMainScreen"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
-            android:name=".MainScreen"
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.User.MainScreen"
+            android:exported="true">
+
         </activity>
         <meta-data
             android:name="preloaded_fonts"

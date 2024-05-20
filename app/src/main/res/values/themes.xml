@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.HeartDiseasePrediction" parent="Base.Theme.HeartDiseasePrediction" />
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">
+            @drawable/splash_background
+        </item>
+    </style>
 </resources>

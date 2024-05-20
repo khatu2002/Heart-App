@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
             android:letterSpacing="0.02"
-            android:text="@string/textintrologin"
+            android:text="Cherish Your Heart, Safeguard Your Life: Prioritize Cardio Health."
             android:textColor="#092C2C"
             android:textSize="13sp" />
 

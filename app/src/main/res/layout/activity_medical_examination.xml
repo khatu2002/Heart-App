@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicalExaminationActivity"
+    tools:context=".Activities.Doctor.MedicalExaminationActivity"
     android:background="@drawable/background_gradient">
 
     <ImageView
@@ -241,7 +241,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/diagnostic"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="110dp"
                     android:hint="Diagnostic detail"
                     android:textSize="15dp"
                     android:textColor="#092C2C"
@@ -276,8 +276,8 @@
 
             <ImageView
                 android:id="@+id/prescriptions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/nexticon"
                 />

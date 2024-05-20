@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".Activities.User.ProfileFragment">
+
 
 
     <ImageView
@@ -40,16 +41,25 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_Username" />
+    <ImageView
+        android:id="@+id/updateInfo"
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/updateicon"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView_Username"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_TopBg"/>
     <TextView
         android:id="@+id/textView_Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="22dp"
         android:fontFamily="@font/inter_black"
-        android:text="User - Gender"
+        android:text="User"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgView_TopBg" />
+
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -66,6 +76,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_Username">
+
 
         <com.google.android.material.card.MaterialCardView
             style="@style/CardView"
@@ -133,6 +144,7 @@
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/weight_value"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -170,6 +182,7 @@
                     android:textAlignment="center" />
 
                 <TextView
+                    android:id="@+id/height_value"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -180,6 +193,8 @@
 
         </com.google.android.material.card.MaterialCardView>
     </GridLayout>
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -599,8 +614,10 @@
             </com.google.android.material.card.MaterialCardView>
 
         </GridLayout>
+
     </ScrollView>
 
     />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
