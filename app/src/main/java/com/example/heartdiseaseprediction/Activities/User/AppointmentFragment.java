@@ -32,7 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AppointmentFragment extends Fragment {
 
-    ImageButton btn_ReturnHome;
     CardView upcoming,history;
     ImageView MakeApointment;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -98,8 +97,13 @@ public class AppointmentFragment extends Fragment {
                         String Date = appointmentSnapshot.child("date").getValue(String.class);
                         String IDAppointment =appointmentSnapshot.getKey();
                         // Tạo view mới từ layout XML
-                        LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        if(getActivity()!=null){
+                            LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        }
+
                         View itemView = inflater.inflate(R.layout.item_appointment_history, null);
+
+
                         // Đặt dữ liệu vào các TextView trong itemView
                         TextView serviceTextView = itemView.findViewById(R.id.servicename);
                         serviceTextView.setText(Service);
@@ -133,6 +137,7 @@ public class AppointmentFragment extends Fragment {
         ScrollView scrollView1 = rootView.findViewById(R.id.scrollItemIncoming);
         LinearLayout linearLayout1 = new LinearLayout(getActivity());
         linearLayout1.setOrientation(LinearLayout.VERTICAL);
+
         scrollView1.addView(linearLayout1);
         // Tạo truy vấn để lấy tất cả các cuộc hẹn có userID và status mong muốn
         Query appointmentsQueryend = appointmentsRef.orderByChild("status").equalTo("incoming");;
@@ -146,8 +151,13 @@ public class AppointmentFragment extends Fragment {
                         String Date = appointmentSnapshot.child("date").getValue(String.class);
                         String IDAppointment =appointmentSnapshot.getKey();
                         // Tạo view mới từ layout XML
-                        LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        if(getActivity()!=null){
+                            LayoutInflater inflater = LayoutInflater.from(getActivity());
+                        }
+
                         View itemView = inflater.inflate(R.layout.item_appointment_incoming, null);
+
+
                         // Đặt dữ liệu vào các TextView trong itemView
                         TextView serviceTextView = itemView.findViewById(R.id.Serive);
                         serviceTextView.setText(Service);
@@ -222,4 +232,5 @@ public class AppointmentFragment extends Fragment {
         editor.putString("AppointmentKey", AppoimentID);
         editor.apply();
     }
+
 }

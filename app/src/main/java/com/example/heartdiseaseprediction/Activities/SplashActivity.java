@@ -26,7 +26,6 @@ public class SplashActivity extends AppCompatActivity {
                 // Kiểm tra xem người dùng đã đăng nhập chưa
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
                 FirebaseUser currentUser = mAuth.getCurrentUser();
-
                 if (currentUser != null) {
                     checkUserRoleAndRedirect();
                 } else {

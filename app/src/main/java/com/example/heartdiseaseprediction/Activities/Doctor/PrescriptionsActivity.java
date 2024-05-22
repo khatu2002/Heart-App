@@ -106,8 +106,15 @@ public class PrescriptionsActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         if (!itemViews.isEmpty()) {
-                            View itemViewToRemove = itemViews.remove(itemViews.size() - 1); // Lấy itemView cuối cùng trong danh sách
-                            linearLayout.removeView(itemViewToRemove); // Xóa itemView khỏi linearLayout
+                            // Lấy index của itemView được chọn
+                            int indexToRemove = itemViews.indexOf(itemView);
+
+                            // Kiểm tra nếu itemView tồn tại trong danh sách
+                            if (indexToRemove != -1) {
+                                // Xóa itemView khỏi danh sách và khỏi linearLayout
+                                itemViews.remove(indexToRemove);
+                                linearLayout.removeView(itemView);
+                            }
                         }
                     }
                 });
@@ -130,8 +137,11 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 // Xác định ScrollView trong layout XML của bạn và thiết lập ID cho nó là scrollView
                 ScrollView scrollView = findViewById(R.id.scrollViewdrug);
 
-                for (int i = 0; i < scrollView.getChildCount(); i++) {
-                    View item = scrollView.getChildAt(i);
+                // Get the LinearLayout inside the ScrollView
+                LinearLayout linearLayout = (LinearLayout) scrollView.getChildAt(0);
+
+                for (int i = 0; i < linearLayout.getChildCount(); i++) {
+                    View item = linearLayout.getChildAt(i);
 
                     // Lấy các thành phần con của mỗi item
                     Spinner drugNameSpinner = item.findViewById(R.id.drugname);
@@ -153,12 +163,12 @@ public class PrescriptionsActivity extends AppCompatActivity {
                     if (medicineID != null) {
                         medicinesRef.child(medicineID).setValue(medicine);
                     }
-
-                    Toast.makeText(getApplicationContext(), "Successfully!!", Toast.LENGTH_SHORT).show();
-                    SendtoMainAdminActivity();
-
                 }
+
+                Toast.makeText(getApplicationContext(), "Successfully!!", Toast.LENGTH_SHORT).show();
+                SendtoMainAdminActivity();
             }
+
         });
 
     }

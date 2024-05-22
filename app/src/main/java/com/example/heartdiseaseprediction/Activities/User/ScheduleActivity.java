@@ -160,7 +160,7 @@ public class ScheduleActivity extends AppCompatActivity {
                     User currentUser = session.getUserDetails();
                     User userA= new User(currentUser.getUserID(), currentUser.getEmail(), currentUser.getPassword(), currentUser.getUsername(), currentUser.getAge(), currentUser.getHeight(), currentUser.getWeight(), currentUser.getGender());
                     Log.d("UserInfo",userA.getUserID()+ " "+userA.getGender()+" "+userA.getAge()+" "+userA.getWeight()+" "+userA.getHeight());
-                String appointmentId = databaseReference.child("users").child(auth.getCurrentUser().getUid()).child("appointments").push().getKey();
+                    String appointmentId = databaseReference.child("users").child(auth.getCurrentUser().getUid()).child("appointments").push().getKey();
                     String userid_status =userId+"_incoming";
                     Appointment appointment= new Appointment(date, doctor,note,"incoming",selectedService,userA,userid_status);
                     Log.d("selectedService",selectedService);

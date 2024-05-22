@@ -99,7 +99,8 @@ public class AdminMainScreen extends AppCompatActivity {
                         String service = appointmentSnapshot.child("service").getValue(String.class);
                         String date=appointmentSnapshot.child("date").getValue(String.class);
                         String IDAppointment =appointmentSnapshot.getKey();
-                        SaveKeyAppointment(IDAppointment);
+
+
                         // Tạo view mới từ layout XML
                         LayoutInflater inflater = LayoutInflater.from(AdminMainScreen.this);
                         View itemView = inflater.inflate(R.layout.item_user, null);
@@ -129,11 +130,13 @@ public class AdminMainScreen extends AppCompatActivity {
                         Layout.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                TextView AppointmentID = itemView.findViewById(R.id.IDAppointment);
                                 TextView Name = itemView.findViewById(R.id.username);
                                 String username = Name.getText().toString();
                                 SaveSessionUser(username);
                                 SaveSessionAppointment(IDAppointment);
                                 SendToPreCheckupActivity();
+                                SaveKeyAppointment(AppointmentID.getText().toString());
                             }
                         });
 
@@ -170,7 +173,6 @@ public class AdminMainScreen extends AppCompatActivity {
                         String service = appointmentSnapshot.child("service").getValue(String.class);
                         String date=appointmentSnapshot.child("date").getValue(String.class);
                         String IDAppointment =appointmentSnapshot.getKey();
-                        SaveKeyAppointment(IDAppointment);
                         // Tạo view mới từ layout XML
                         LayoutInflater inflater = LayoutInflater.from(AdminMainScreen.this);
                         View itemView = inflater.inflate(R.layout.item_user, null);
@@ -204,6 +206,7 @@ public class AdminMainScreen extends AppCompatActivity {
                                 String username = Name.getText().toString();
                                 SaveSessionUser(username);
                                 SaveSessionAppointment(IDAppointment);
+                                SaveKeyAppointment(AppointmentID.getText().toString());
                                 SendToDetailActivity();
                             }
                         });

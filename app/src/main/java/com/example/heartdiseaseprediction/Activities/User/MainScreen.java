@@ -24,13 +24,11 @@ public class MainScreen extends AppCompatActivity
         binding= ActivityMainScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
-        // Khởi tạo bottomNavigationView
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-// Set item được chọn
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-// Thiết lập lắng nghe sự kiện cho bottomNavigationView
         bottomNavigationView.setOnItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
             if (id == R.id.home){

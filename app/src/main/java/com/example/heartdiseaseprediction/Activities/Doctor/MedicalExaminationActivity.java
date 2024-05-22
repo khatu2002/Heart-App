@@ -52,7 +52,7 @@ public class MedicalExaminationActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String temperater = sharedPreferences.getString("temperater", "");
         String blood_pressure = sharedPreferences.getString("blood_pressure", "");
-        String AppoimentKey = sharedPreferences.getString("AppointmentKey", "");
+        String AppointmentKey = sharedPreferences.getString("AppointmentKey", "");
 
         userInfo=findViewById(R.id.userInfo);
         weight=findViewById(R.id.weight);
@@ -78,7 +78,8 @@ public class MedicalExaminationActivity extends AppCompatActivity {
                     String MedicalHistory = medicalhistory.getText().toString();
                     String Diagnostic = diagnostic.getText().toString();
 
-                DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppoimentKey);
+                DatabaseReference appointmentsRef = FirebaseDatabase.getInstance().getReference().child("appointments").child(AppointmentKey);
+
                 // Tạo một HashMap để lưu trữ các giá trị dữ liệu mới
                 Map<String, Object> updateValues = new HashMap<>();
                 updateValues.put("temperater", temperater);
