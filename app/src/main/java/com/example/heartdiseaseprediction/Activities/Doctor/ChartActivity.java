@@ -183,11 +183,7 @@ public class ChartActivity extends AppCompatActivity{
         barChart.getDescription().setEnabled(false);
     }
     public void CallBarChart(){
-        // calling method to get bar entries.
-        // Xóa hết dữ liệu cũ trong barEntriesArrayList
 
-
-        // Gọi lại phương thức getBarEntries() để lấy dữ liệu mới
         getBarEntries();
 
 
